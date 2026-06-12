@@ -1,0 +1,8 @@
+# Copyright (c) 2026 Jonny Irwin
+# SPDX-License-Identifier: MIT
+
+config SHIELD_EIDOLON_LEFT
+	def_bool $(shields_list_contains,eidolon_left)
+
+config SHIELD_EIDOLON_RIGHT
+	def_bool $(shields_list_contains,eidolon_right)

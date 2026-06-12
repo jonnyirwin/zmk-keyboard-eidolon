@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2026 Jonny Irwin
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "eidolon.dtsi"
+
+&default_transform {
+    col-offset = <5>;
+};

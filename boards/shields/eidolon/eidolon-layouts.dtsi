@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2026 Jonny Irwin
+ * SPDX-License-Identifier: MIT
+ *
+ * Key positions derived from pcb/eidolon.yaml (Ergogen) in the hardware repo:
+ * 18mm column / 17mm row Choc spacing, pinky splayed 5°, ring 3°, thumbs -8°.
+ * Scale: 100 units = 18mm.
+ */
+
+#include <physical_layouts.dtsi>
+
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs   97   92  102   18    (-300)   151    64>
+            , <&key_physical_attrs   97   92  214    0       0     0     0>
+            , <&key_physical_attrs   97   92  314   20       0     0     0>
+            , <&key_physical_attrs   97   92  586   20       0     0     0>
+            , <&key_physical_attrs   97   92  686    0       0     0     0>
+            , <&key_physical_attrs   97   92  798   18     300   846    64>
+            , <&key_physical_attrs   97   92    0   92    (-500)    48   138>
+            , <&key_physical_attrs   97   92  107  112    (-300)   156   158>
+            , <&key_physical_attrs   97   92  214   94       0     0     0>
+            , <&key_physical_attrs   97   92  314  114       0     0     0>
+            , <&key_physical_attrs   97   92  414   68       0     0     0>
+            , <&key_physical_attrs   97   92  486   68       0     0     0>
+            , <&key_physical_attrs   97   92  586  114       0     0     0>
+            , <&key_physical_attrs   97   92  686   94       0     0     0>
+            , <&key_physical_attrs   97   92  793  112     300   841   158>
+            , <&key_physical_attrs   97   92  900   92     500   948   138>
+            , <&key_physical_attrs   97   92    8  186    (-500)    57   232>
+            , <&key_physical_attrs   97   92  112  206    (-300)   161   252>
+            , <&key_physical_attrs   97   92  214  189       0     0     0>
+            , <&key_physical_attrs   97   92  314  209       0     0     0>
+            , <&key_physical_attrs   97   92  414  163       0     0     0>
+            , <&key_physical_attrs   97   92  486  163       0     0     0>
+            , <&key_physical_attrs   97   92  586  209       0     0     0>
+            , <&key_physical_attrs   97   92  686  189       0     0     0>
+            , <&key_physical_attrs   97   92  788  206     300   836   252>
+            , <&key_physical_attrs   97   92  892  186     500   940   232>
+            , <&key_physical_attrs   97   92  347  323     800   396   369>
+            , <&key_physical_attrs   97   92  446  337     800   495   383>
+            , <&key_physical_attrs   97   92  454  337    (-800)   502   383>
+            , <&key_physical_attrs   97   92  553  323    (-800)   601   369>
+            ;
+    };
+};

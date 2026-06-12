@@ -1,0 +1,12 @@
+file_format: "1"
+id: eidolon
+name: Eidolon
+type: shield
+url: https://github.com/jonnyirwin/eidolon
+requires: [seeed_xiao]
+features:
+  - keys
+  - studio
+siblings:
+  - eidolon_left
+  - eidolon_right

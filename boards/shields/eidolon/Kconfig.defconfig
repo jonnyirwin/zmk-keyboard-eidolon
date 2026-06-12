@@ -1,0 +1,19 @@
+# Copyright (c) 2026 Jonny Irwin
+# SPDX-License-Identifier: MIT
+
+if SHIELD_EIDOLON_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Eidolon"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_EIDOLON_LEFT || SHIELD_EIDOLON_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
