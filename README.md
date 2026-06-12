@@ -84,6 +84,8 @@ manifest:
 
 then reference `shield: eidolon_left` / `eidolon_right` with `board: seeeduino_xiao_ble` in that repo's `build.yaml`, and override the keymap with a `config/eidolon.keymap`.
 
+The shield also builds against ZMK `main` (verified 2026-06), where the Zephyr hardware-model-v2 migration renamed the board: use `board: xiao_ble` there instead of `seeeduino_xiao_ble`. If you track `main`, pin a known-good commit SHA in `west.yml` rather than the branch so `west update` can't break your builds.
+
 ## Building locally
 
 With docker (uses the official ZMK build image):
