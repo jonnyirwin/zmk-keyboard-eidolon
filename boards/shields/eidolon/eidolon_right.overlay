@@ -8,3 +8,14 @@
 &default_transform {
     col-offset = <5>;
 };
+
+&kscan0 {
+    // RIGHT half: R0,R1,R2,R3 -> D10, D9, D8, D7 (all rows on the matrix-facing
+    // D7-D10 edge; columns stay on D0-D4 in the shared dtsi).
+    row-gpios
+        = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+};

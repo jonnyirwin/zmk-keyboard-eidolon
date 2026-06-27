@@ -110,14 +110,17 @@ Firmware lands in `/tmp/zmk-ws/build_*/zephyr/zmk.uf2`.
 
 ## Hardware / wiring reference
 
-COL2ROW diode matrix, identical nets on both (mirrored) halves:
+COL2ROW diode matrix. The halves are mirrored boards but each is an independent wireless unit with its own firmware, so the net → pin maps differ between halves:
 
-| Net | Role | XIAO pin |
-|-----|------|----------|
-| C0–C4 | columns, pinky → inner | D0–D4 |
-| R0–R3 | rows: top, home, bottom, thumb | D5–D8 |
+| Net | Role | Left XIAO pin | Right XIAO pin |
+|-----|------|---------------|----------------|
+| C0–C4 | columns, pinky → inner | D0–D4 | D0–D4 |
+| R0 | row: top | D5 | D10 |
+| R1 | row: home | D6 | D9 |
+| R2 | row: bottom | D8 | D8 |
+| R3 | row: thumb | D7 | D7 |
 
-Because the halves are true mirrors (not one reversible PCB), the right half scans the same local columns but maps them reversed in the matrix transform via `col-offset = <5>` (`eidolon_right.overlay`).
+The shared `eidolon.dtsi` carries the left row mapping; `eidolon_right.overlay` overrides `row-gpios` for the right board. The right half also maps its columns reversed in the matrix transform via `col-offset = <5>`.
 
 Power: battery + → slide switch → XIAO `B+`; battery − → GND. Battery voltage sensing is built into the `seeeduino_xiao_ble` board definition — no shield config needed. Deep sleep is enabled (`CONFIG_ZMK_SLEEP=y`, 15 min idle default); any keypress wakes the half.
 
@@ -130,7 +133,7 @@ boards/shields/eidolon/
   eidolon.dtsi            kscan matrix + matrix transform (shared)
   eidolon-layouts.dtsi    physical layout (key positions for ZMK Studio)
   eidolon_left.overlay    left half
-  eidolon_right.overlay   right half (col-offset)
+  eidolon_right.overlay   right half (col-offset + right row-gpios)
   eidolon.keymap          default keymap
   eidolon.conf            shared config (deep sleep)
   Kconfig.shield          shield definitions

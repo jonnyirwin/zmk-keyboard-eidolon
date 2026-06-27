@@ -2,10 +2,15 @@
  * Copyright (c) 2026 Jonny Irwin
  * SPDX-License-Identifier: MIT
  *
- * Wiring (both halves, mirrored boards with identical nets):
- *   cols C0-C4 (pinky..inner) -> XIAO D0-D4
- *   rows R0-R3 (top/home/bottom/thumb) -> XIAO D5-D8
+ * Wiring (mirrored boards, but each half is an independent wireless unit
+ * with its own net->pin map -- the maps differ between halves):
+ *   cols C0-C4 (pinky..inner) -> XIAO D0-D4   (both halves)
+ *   LEFT  rows R0,R1,R2,R3 (top/home/bottom/thumb) -> D5, D6, D8, D7
+ *   RIGHT rows R0,R1,R2,R3                          -> D10, D9, D8, D7
  *   COL2ROW diodes.
+ *
+ * This dtsi defines the LEFT row mapping in kscan0; the right overlay
+ * overrides row-gpios to match the right board.
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
@@ -49,11 +54,12 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,9) RC(2,8) RC(2,7) RC(2,6) RC(2,5)
             , <&xiao_d 4 GPIO_ACTIVE_HIGH>
             ;
 
+        // LEFT half: R0,R1,R2,R3 -> D5, D6, D8, D7 (right overlay overrides this)
         row-gpios
             = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
