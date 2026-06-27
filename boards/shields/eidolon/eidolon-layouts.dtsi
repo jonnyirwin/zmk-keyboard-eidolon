@@ -5,8 +5,10 @@
  * Key positions generated from the Ergogen points of pcb/eidolon.yaml in the
  * hardware repo (`node build.js` -> output/points/points.yaml), in matrix-
  * transform order. 18mm column / 17mm row Choc spacing, pinky splayed 5deg,
- * ring 3deg, thumbs -8deg; the right half is the true mirror (axis +85mm),
- * so the two halves sit apart as on a real split -- not a compact unibody.
+ * ring 3deg, thumbs -8deg. The right half is the mirror image, translated
+ * left so the inner columns sit one key-width apart (hummingbird-style gap)
+ * rather than at the full physical-design separation -- purely cosmetic for
+ * keymap-drawer / ZMK Studio; each half's internal shape is unchanged.
  *
  * Conversion: ZMK uses 100 units = 1u; here 100 units = 18mm (isotropic, so
  * the real aspect ratio is preserved). x,y is the unrotated top-left corner;
@@ -25,33 +27,33 @@
             = <&key_physical_attrs   97   92  102   18  (-300)   151   64>  // L ring  top
             , <&key_physical_attrs   97   92  214    0       0     0    0>  // L mid   top
             , <&key_physical_attrs   97   92  314   20       0     0    0>  // L index top
-            , <&key_physical_attrs   97   92 1058   20       0     0    0>  // R index top
-            , <&key_physical_attrs   97   92 1158    0       0     0    0>  // R mid   top
-            , <&key_physical_attrs   97   92 1270   18   (300)  1318   64>  // R ring  top
+            , <&key_physical_attrs   97   92  714   20       0     0    0>  // R index top
+            , <&key_physical_attrs   97   92  814    0       0     0    0>  // R mid   top
+            , <&key_physical_attrs   97   92  925   18   (300)   974   64>  // R ring  top
             , <&key_physical_attrs   97   92    0   92  (-500)    49  138>  // L pinky home
             , <&key_physical_attrs   97   92  107  112  (-300)   156  158>  // L ring  home
             , <&key_physical_attrs   97   92  214   94       0     0    0>  // L mid   home
             , <&key_physical_attrs   97   92  314  114       0     0    0>  // L index home
             , <&key_physical_attrs   97   92  414   68       0     0    0>  // L inner home
-            , <&key_physical_attrs   97   92  958   68       0     0    0>  // R inner home
-            , <&key_physical_attrs   97   92 1058  114       0     0    0>  // R index home
-            , <&key_physical_attrs   97   92 1158   94       0     0    0>  // R mid   home
-            , <&key_physical_attrs   97   92 1265  112   (300)  1313  158>  // R ring  home
-            , <&key_physical_attrs   97   92 1372   92   (500)  1421  138>  // R pinky home
+            , <&key_physical_attrs   97   92  614   68       0     0    0>  // R inner home
+            , <&key_physical_attrs   97   92  714  114       0     0    0>  // R index home
+            , <&key_physical_attrs   97   92  814   94       0     0    0>  // R mid   home
+            , <&key_physical_attrs   97   92  920  112   (300)   969  158>  // R ring  home
+            , <&key_physical_attrs   97   92 1028   92   (500)  1076  138>  // R pinky home
             , <&key_physical_attrs   97   92    8  186  (-500)    57  232>  // L pinky bottom
             , <&key_physical_attrs   97   92  112  206  (-300)   161  252>  // L ring  bottom
             , <&key_physical_attrs   97   92  214  189       0     0    0>  // L mid   bottom
             , <&key_physical_attrs   97   92  314  209       0     0    0>  // L index bottom
             , <&key_physical_attrs   97   92  414  163       0     0    0>  // L inner bottom
-            , <&key_physical_attrs   97   92  958  163       0     0    0>  // R inner bottom
-            , <&key_physical_attrs   97   92 1058  209       0     0    0>  // R index bottom
-            , <&key_physical_attrs   97   92 1158  189       0     0    0>  // R mid   bottom
-            , <&key_physical_attrs   97   92 1260  206   (300)  1308  252>  // R ring  bottom
-            , <&key_physical_attrs   97   92 1364  186   (500)  1412  232>  // R pinky bottom
+            , <&key_physical_attrs   97   92  614  163       0     0    0>  // R inner bottom
+            , <&key_physical_attrs   97   92  714  209       0     0    0>  // R index bottom
+            , <&key_physical_attrs   97   92  814  189       0     0    0>  // R mid   bottom
+            , <&key_physical_attrs   97   92  915  206   (300)   964  252>  // R ring  bottom
+            , <&key_physical_attrs   97   92 1019  186   (500)  1068  232>  // R pinky bottom
             , <&key_physical_attrs   97   92  347  323   (800)   396  369>  // L thumb inner
             , <&key_physical_attrs   97   92  446  337   (800)   495  383>  // L thumb outer
-            , <&key_physical_attrs   97   92  926  337  (-800)   974  383>  // R thumb outer
-            , <&key_physical_attrs   97   92 1025  323  (-800)  1073  369>  // R thumb inner
+            , <&key_physical_attrs   97   92  581  337  (-800)   630  383>  // R thumb outer
+            , <&key_physical_attrs   97   92  680  323  (-800)   729  369>  // R thumb inner
             ;
     };
 };
