@@ -38,14 +38,14 @@ There is no Studio build for the right half: ZMK Studio connects to the central,
 
 ## Default keymap
 
-Adapted from the in-tree [hummingbird](https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/hummingbird) shield, which has the identical column structure (2-key pinky/inner columns, 3-key ring/middle/index, 2 thumbs per half) — bindings carry over column-for-column.
+Adapted from the in-tree [hummingbird](https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/hummingbird) shield, which has the identical column structure (2-key pinky/inner columns, 3-key ring/middle/index, 2 thumbs per half) — bindings carry over key-for-key. The logical rows follow the Phantom / Berylline 30-key convention (5-5-3): the dropped pinky and inner columns' upper key is the **top** row and their lower key the **home** row, so a standard 30-key (5-5-3) keymap drops straight in.
 
 **Default layer**
 
 ```
-       W   E   R                 U   I   O
-  Q    S   D   F    T       H    J   K   L    P
-  A    X   C   V    G       N    M   ,   .    '
+  Q    W   E   R    T       H    U   I   O    P
+  A    S   D   F    G       N    J   K   L    '
+       X   C   V                 M   ,   .
             TAB  RET       SPC  BSPC
 ```
 
@@ -53,7 +53,7 @@ Adapted from the in-tree [hummingbird](https://github.com/zmkfirmware/zmk/tree/m
 - Missing letters are bottom-row combos: `Z` = X+C, `B` = C+V, `Y` = M+`,`, `/` = `,`+`.`.
 - Thumb holds: TAB → **Nav**, SPC → **Num**, BSPC → **Sym**.
 
-**Nav** — arrows/HOME/END/PG on the right hand; ESC/DEL on right thumbs. The left hand carries radio controls: `BT_CLR`, `BT_SEL 0–2`, `OUT_TOG` (USB↔BLE) across the bottom row, and `&studio_unlock` on the right pinky home key.
+**Nav** — arrows/HOME/END/PG on the right hand; ESC/DEL on right thumbs. The left hand carries radio controls: `BT_CLR`, `BT_SEL 0–2`, `OUT_TOG` (USB↔BLE) across its lowest key in each column, and `&studio_unlock` on the right pinky top key.
 
 **Num / Sym** — numpad-style digits (shifted symbols on Sym) on the left hand, brackets on the pinky/inner keys, `0`/`-` (`)`/`_`) on the left thumbs.
 
